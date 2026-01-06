@@ -57,7 +57,7 @@ const ThemeToggle = styled.button<{ $mode: "dark" | "light" }>`
     background: ${({ $mode, theme }) =>
       $mode === "dark" ? theme.card2 : theme.bg};
     box-shadow: inset 0 0 0 3px
-      ${({ $mode, theme }) =>
+      ${({ $mode }) =>
         $mode === "dark" ? "rgba(255,255,255,0.08)" : "rgba(16,24,40,0.06)"};
   }
 `;
