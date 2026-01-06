@@ -3,7 +3,8 @@ import react from "@vitejs/plugin-react";
 import { federation } from "@module-federation/vite";
 
 const remotePokemonDetail =
-  process.env.VITE_REMOTE_POKEMON_DETAIL ?? "http://localhost:3001/remoteEntry.js";
+  process.env.VITE_REMOTE_POKEMON_DETAIL ??
+  "http://localhost:3001/remoteEntry.js";
 
 const remoteHistory =
   process.env.VITE_REMOTE_HISTORY ?? "http://localhost:3002/remoteEntry.js";
@@ -25,7 +26,14 @@ export default defineConfig({
           entry: remoteHistory,
         },
       },
-      shared: ["react", "react-dom", "react-router-dom"],
+      shared: [
+        "react",
+        "react-dom",
+        "react-router-dom",
+        "styled-components",
+        "@tanstack/react-query",
+        "zustand",
+      ],
     }),
   ],
   server: {
