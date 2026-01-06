@@ -1,0 +1,19 @@
+{
+  "name": "reto-pokemon-mf",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:shell": "npm run dev -w apps/shell",
+    "dev:detail": "npm run dev -w apps/pokemon-detail",
+    "dev:history": "npm run dev -w apps/history",
+    "dev": "concurrently -n shell,detail,history -c auto \"npm run dev:shell\" \"npm run dev:detail\" \"npm run dev:history\"",
+    "build": "npm run build -ws",
+    "lint": "npm run lint -ws"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
